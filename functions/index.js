@@ -9,6 +9,8 @@ exports.getHabits = functions
     const targetDate = getRecentSunday();
     const url = `https://api.habitify.me/status/${habitId}?target_date=${targetDate}`;
 
+    response.set('Access-Control-Allow-Origin', '*');
+
     fetch(url, {
       method: 'GET',
       headers: {
